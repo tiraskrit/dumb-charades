@@ -8,7 +8,7 @@ import { shuffle } from "../utils/helpers";
 export default function WelcomeScreen({ onStart }) {
   const [team1, setTeam1] = useState("Team Alpha");
   const [team2, setTeam2] = useState("Team Bravo");
-  const [rounds, setRounds] = useState(5);
+  const [rounds, setRounds] = useState(25);
   const [movies, setMovies] = useState([]);
   const [movieText, setMovieText] = useState("");
   const [fileLoaded, setFileLoaded] = useState(false);
@@ -31,7 +31,7 @@ export default function WelcomeScreen({ onStart }) {
 
   const handleStart = () => {
     if (!team1.trim() || !team2.trim()) { setError("Please enter both team names."); return; }
-    if (rounds < 1 || rounds > 20) { setError("Rounds must be between 1 and 20."); return; }
+    if (rounds < 1 || rounds > 50) { setError("Rounds must be between 1 and 50."); return; }
     const list = movies.length > 0 ? movies : SAMPLE_MOVIES;
     if (list.length < rounds * 2) { setError(`Need at least ${rounds * 2} movies. You have ${list.length}.`); return; }
     onStart({ team1: team1.trim(), team2: team2.trim(), rounds, movies: shuffle(list) });
@@ -104,7 +104,7 @@ export default function WelcomeScreen({ onStart }) {
               Number of Rounds
             </label>
             <div style={{ display:"flex", alignItems:"center", gap:16 }}>
-              {[3,5,7,10].map(n => (
+              {[10,15,20,30].map(n => (
                 <button key={n} onClick={() => setRounds(n)} style={{
                   flex:1, padding:"12px 0", borderRadius:12, border:"1px solid",
                   borderColor: rounds === n ? "#A78BFA" : "rgba(255,255,255,0.1)",
@@ -114,7 +114,7 @@ export default function WelcomeScreen({ onStart }) {
                   letterSpacing:1, transition:"all 0.2s",
                 }}>{n}</button>
               ))}
-              <input type="number" value={rounds} min={1} max={20}
+              <input type="number" value={rounds} min={1} max={50}
                 onChange={e => setRounds(Number(e.target.value))}
                 style={{
                   flex:1, background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)",
