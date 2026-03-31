@@ -3,6 +3,7 @@ import { SCREEN } from "./constants/screenConstants";
 import WelcomeScreen from "./components/WelcomeScreen";
 import GameScreen from "./components/GameScreen";
 import ResultScreen from "./components/ResultScreen";
+import "./styles/global.css";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ROOT

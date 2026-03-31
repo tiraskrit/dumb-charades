@@ -9,7 +9,7 @@ export default function ScoreCard({ name, score, isActive, isWinning, isLosingBe
     ? "0 0 30px rgba(255,71,87,0.2)"
     : "none";
   return (
-    <div style={{
+    <div className="score-card" style={{
       background: isActive ? "rgba(255,255,255,0.07)" : "rgba(255,255,255,0.03)",
       border: `2px solid ${border}`,
       borderRadius: 20,
@@ -35,12 +35,12 @@ export default function ScoreCard({ name, score, isActive, isWinning, isLosingBe
         letterSpacing:2, marginBottom:8, fontFamily:"'DM Sans',sans-serif",
         textTransform:"uppercase",
       }}>{side === 0 ? "◀ TEAM A" : "TEAM B ▶"}</div>
-      <div style={{
+      <div className="score-card-name" style={{
         fontSize:22, fontWeight:700, color:"#fff",
         fontFamily:"'Bebas Neue',sans-serif", letterSpacing:1, marginBottom:12,
         whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis",
       }}>{name}</div>
-      <div style={{
+      <div className="score-card-score" style={{
         fontSize:52, fontWeight:900, lineHeight:1,
         color: isWinning ? "#2ED573" : isLosingBehind ? "#FF4757" : "#fff",
         fontFamily:"'Bebas Neue',sans-serif", letterSpacing:2,

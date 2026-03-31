@@ -46,7 +46,7 @@ export default function WelcomeScreen({ onStart }) {
     }}>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
-      <div style={{ width:"100%", maxWidth:520, padding:"0 20px" }}>
+      <div className="welcome-container" style={{ width:"100%", maxWidth:520, padding:"0 20px" }}>
         {/* Logo */}
         <div style={{ textAlign:"center", marginBottom:48 }}>
           <div style={{
@@ -55,13 +55,13 @@ export default function WelcomeScreen({ onStart }) {
             padding:"8px 20px", marginBottom:20,
             fontSize:12, letterSpacing:3, color:"rgba(255,255,255,0.4)",
           }}>🎬 HOST CONSOLE</div>
-          <h1 style={{
+          <h1 className="welcome-title" style={{
             fontSize:64, margin:0, lineHeight:1,
             fontFamily:"'Bebas Neue',sans-serif", letterSpacing:4,
             background:"linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.4))",
             WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
           }}>DUMB</h1>
-          <h1 style={{
+          <h1 className="welcome-title" style={{
             fontSize:64, margin:0, lineHeight:1,
             fontFamily:"'Bebas Neue',sans-serif", letterSpacing:4,
             background:"linear-gradient(135deg, #A78BFA, #6366F1)",
@@ -73,7 +73,7 @@ export default function WelcomeScreen({ onStart }) {
         </div>
 
         {/* Form Card */}
-        <div style={{
+        <div className="welcome-form" style={{
           background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.08)",
           borderRadius:24, padding:36,
         }}>
@@ -82,7 +82,7 @@ export default function WelcomeScreen({ onStart }) {
             <label style={{ display:"block", fontSize:11, letterSpacing:2, color:"rgba(255,255,255,0.4)", marginBottom:14, textTransform:"uppercase" }}>
               Team Names
             </label>
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
+            <div className="team-inputs" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
               {[
                 [team1, setTeam1, "Team Alpha"],
                 [team2, setTeam2, "Team Bravo"],
@@ -103,7 +103,7 @@ export default function WelcomeScreen({ onStart }) {
             <label style={{ display:"block", fontSize:11, letterSpacing:2, color:"rgba(255,255,255,0.4)", marginBottom:14, textTransform:"uppercase" }}>
               Number of Rounds
             </label>
-            <div style={{ display:"flex", alignItems:"center", gap:16 }}>
+            <div className="rounds-selection" style={{ display:"flex", alignItems:"center", gap:16 }}>
               {[10,15,20,30].map(n => (
                 <button key={n} onClick={() => setRounds(n)} style={{
                   flex:1, padding:"12px 0", borderRadius:12, border:"1px solid",
@@ -154,7 +154,7 @@ export default function WelcomeScreen({ onStart }) {
             }}>{error}</div>
           )}
 
-          <button onClick={handleStart} style={{
+          <button className="start-button" onClick={handleStart} style={{
             width:"100%", padding:"18px", borderRadius:14,
             background:"linear-gradient(135deg, #7C3AED, #A78BFA)",
             border:"none", color:"#fff", fontSize:18, fontWeight:700,

@@ -178,7 +178,7 @@ export default function GameScreen({ config, onEnd }) {
           <div style={{ fontSize:15, color:"rgba(255,255,255,0.5)", marginBottom:28 }}>
             Does <strong style={{color:"#fff"}}>{teams[otherTeam(activeTeam)]}</strong> want to attempt?
           </div>
-          <div style={{ display:"flex", gap:16, justifyContent:"center" }}>
+          <div className="phase-content-buttons" style={{ display:"flex", gap:16, justifyContent:"center" }}>
             <button onClick={handlePassToOther} style={{
               padding:"14px 36px", borderRadius:50, border:"none",
               background:"linear-gradient(135deg, #FFA502, #FF6348)",
@@ -200,7 +200,7 @@ export default function GameScreen({ config, onEnd }) {
 
     if (phase === "PLAYING" || phase === "PASSED_PLAYING") {
       return (
-        <div style={{ display:"flex", gap:16, justifyContent:"center", flexWrap:"wrap" }}>
+        <div className="phase-content-buttons" style={{ display:"flex", gap:16, justifyContent:"center", flexWrap:"wrap" }}>
           <button onClick={handleCorrect} style={{
             padding:"16px 48px", borderRadius:50, border:"none",
             background:"linear-gradient(135deg, #2ED573, #1ABC9C)",
@@ -258,7 +258,7 @@ export default function GameScreen({ config, onEnd }) {
   };
 
   return (
-    <div style={{
+    <div className="game-container" style={{
       minHeight:"100vh", background:"#0A0A0F", color:"#fff",
       fontFamily:"'DM Sans',sans-serif", padding:"24px 20px",
       backgroundImage:"radial-gradient(ellipse 60% 40% at 50% 0%, rgba(99,61,183,0.2) 0%, transparent 60%)",
@@ -267,7 +267,7 @@ export default function GameScreen({ config, onEnd }) {
       {showConfetti && <Confetti/>}
 
       {/* Header bar */}
-      <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:28, maxWidth:900, margin:"0 auto 28px" }}>
+      <div className="header-bar" style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:28, maxWidth:900, margin:"0 auto 28px" }}>
         <div style={{
           background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.08)",
           borderRadius:50, padding:"8px 20px", fontSize:13, fontWeight:600, letterSpacing:1,
@@ -276,7 +276,7 @@ export default function GameScreen({ config, onEnd }) {
         </div>
         <div style={{ display:"flex", gap:10 }}>
           {Array.from({length: rounds}, (_, i) => (
-            <div key={i} style={{
+            <div key={i} className="round-indicators" style={{
               width:10, height:10, borderRadius:"50%",
               background: i < currentRound - 1 ? "#A78BFA"
                 : i === currentRound - 1 ? "#fff"
@@ -290,10 +290,10 @@ export default function GameScreen({ config, onEnd }) {
         </div>
       </div>
 
-      <div style={{ maxWidth:900, margin:"0 auto" }}>
+      <div className="game-content" style={{ maxWidth:900, margin:"0 auto" }}>
         {/* Movie name */}
         {(phase === "PLAYING" || phase === "PASSED_PLAYING") && (
-          <div style={{
+          <div className="movie-display" style={{
             textAlign:"center", marginBottom:32,
             background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.08)",
             borderRadius:20, padding:"28px 40px",
@@ -305,7 +305,7 @@ export default function GameScreen({ config, onEnd }) {
             }}>
               🎬 {isPassed ? `PASSED → ${teams[activeTeam]}` : `${teams[activeTeam]}'s Turn`}
             </div>
-            <div style={{
+            <div className="movie-text" style={{
               fontSize:42, fontWeight:800, letterSpacing:1,
               fontFamily:"'Bebas Neue',sans-serif",
               background:"linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.6))",
@@ -325,7 +325,7 @@ export default function GameScreen({ config, onEnd }) {
         )}
 
         {/* Scorecards + Timer row */}
-        <div style={{ display:"flex", gap:20, alignItems:"center", marginBottom:32 }}>
+        <div className="score-timer-row" style={{ display:"flex", gap:20, alignItems:"stretch", marginBottom:32, justifyContent:"center", width:"100%" }}>
           <ScoreCard
             name={teams[0]} score={scores[0]}
             isActive={activeTeam === 0 && (phase==="PLAYING"||phase==="PASSED_PLAYING")}
@@ -335,8 +335,10 @@ export default function GameScreen({ config, onEnd }) {
           />
 
           {/* Center timer + round info */}
-          <div style={{ textAlign:"center", flexShrink:0, display:"flex", flexDirection:"column", alignItems:"center", gap:12 }}>
-            <CircularTimer timeLeft={timeLeft} totalTime={totalTime} isPassed={isPassed}/>
+          <div className="timer-container" style={{ textAlign:"center", flexShrink:0, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:12, minHeight:200 }}>
+            <div className="circular-timer" style={{ overflow:"visible" }}>
+              <CircularTimer timeLeft={timeLeft} totalTime={totalTime} isPassed={isPassed}/>
+            </div>
             {isTie && scores[0] > 0 && (
               <div style={{
                 background:"rgba(255,215,0,0.1)", border:"1px solid rgba(255,215,0,0.3)",
@@ -356,7 +358,7 @@ export default function GameScreen({ config, onEnd }) {
         </div>
 
         {/* Phase actions */}
-        <div style={{
+        <div className="phase-content" style={{
           background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.07)",
           borderRadius:24, padding:"32px 40px", textAlign:"center",
           minHeight:120, display:"flex", alignItems:"center", justifyContent:"center",
@@ -366,7 +368,7 @@ export default function GameScreen({ config, onEnd }) {
 
         {/* Movie hint for non-playing phases */}
         {(phase === "PRE" || phase === "ROUND_DONE" || phase === "PASSED_PROMPT") && phase !== "ROUND_DONE" && (
-          <div style={{
+          <div className="upcoming-movie" style={{
             marginTop:20, textAlign:"center",
             background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.06)",
             borderRadius:14, padding:"14px 24px",
