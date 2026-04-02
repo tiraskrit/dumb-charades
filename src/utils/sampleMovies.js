@@ -1,6 +1,7 @@
 // ── Sample movies (used if no file is uploaded) ──────────────────────────────
 export const SAMPLE_MOVIES = [
-  // ----------- ENGLISH -----------
+  // ========== ENGLISH (25%) ==========
+  // --- Classics & Blockbusters ---
   "The Dark Knight","Inception","Interstellar","The Matrix","Forrest Gump",
   "The Godfather","Pulp Fiction","The Shawshank Redemption","Fight Club",
   "Goodfellas","The Silence of the Lambs","Schindler's List","The Lion King",
@@ -23,7 +24,29 @@ export const SAMPLE_MOVIES = [
   "Finding Nemo","Up","Coco","Inside Out","Ratatouille",
   "Cars","Frozen","Moana","Zootopia",
 
-  // ----------- HINDI -----------
+  // --- Recent Hits & Popular Additions ---
+  "Ant-Man","Guardians of the Galaxy","Aquaman","Joker","Logan",
+  "Deadpool","X-Men","The Lord of the Rings","Harry Potter",
+  "The Hunger Games","Divergent","The Maze Runner","Twilight","Birdman",
+  "12 Years a Slave","The Grand Budapest Hotel","Spotlight","Moonlight",
+  "Knives Out","Once Upon a Time in Hollywood","Parasite","Soul",
+  "Nomadland","The Father","Minari","Sound of Metal","Promising Young Woman",
+  "Tenet","The Invisible Man","Onward","Emma","Hereditary","Midsommar",
+  "The Lighthouse","Portrait of a Lady on Fire","Another Round",
+  "No Country for Old Men","There Will Be Blood","BlacKkKlansman","Roma",
+  "Green Book","A Star Is Born","First Man","The Favourite","Cold War",
+  "Three Billboards Outside Ebbing Missouri","The Shape of Water",
+  "Baby Driver","The Florida Project","Lady Bird","Phantom Thread",
+  "I Tonya","The Big Sick","Wind River","Good Time","The Killing of a Sacred Deer",
+  
+  // --- Netflix Hits & Popular English Movies ---
+  "Red Notice","Don't Look Up","The Adam Project","Bird Box","The Gray Man",
+  "Damsel","We Can Be Heroes","Carry-On","Leave the World Behind",
+  "The Electric State","The Mitchells vs the Machines","Plane","Back in Action",
+  "The Six Triple Eight","K-Pop Demon Hunters",
+
+  // ========== HINDI (50%) ==========
+  // --- All-Time Classics ---
   "Sholay","Deewar","Zanjeer","Don","Amar Akbar Anthony",
   "Muqaddar Ka Sikandar","Trishul","Kaala Patthar","Silsila",
   "Kabhi Kabhie","Namak Halaal","Sharaabi","Coolie","Agneepath",
@@ -38,7 +61,7 @@ export const SAMPLE_MOVIES = [
   "Ek Tha Tiger","Sultan","Tubelight","War","Pathaan",
   "Jawan","Raees","Chennai Express","Happy New Year",
   "Om Shanti Om","Main Hoon Na","Baadshah","Yes Boss",
-  "Border","Kesari","Shershaah","Uri: The Surgical Strike",
+  "Border","Kesari","Shershaah","Uri The Surgical Strike",
   "Raazi","Baby","Special 26","A Wednesday","Drishyam",
   "Badhaai Ho","Bala","Stree","Peepli Live","Article 15",
   "Pink","Thappad","Piku","Queen","Tanu Weds Manu",
@@ -54,27 +77,71 @@ export const SAMPLE_MOVIES = [
   "Company","Satya","Sarkar","Hera Pheri",
   "Welcome","Hungama","Mujhse Shaadi Karogi","No Entry",
   "Partner","Ready","Bodyguard","Singh Is Kinng",
-  "Namastey London","Toilet: Ek Prem Katha","Pad Man",
-  "Airlift","Rustom","Mission Mangal",
-  "Krrish","Koi... Mil Gaya","Ra.One","Robot",
+  "Namastey London","Toilet Ek Prem Katha","Pad Man",
+  "Airlift","Rustom","Mission Mangal","Krrish","Koi Mil Gaya",
+  "Ra.One","Robot","Aisha","Andhadhun","Ankur","Aradhana","Arth",
+  "Asoka","Awaara","Bandit Queen","Bareilly Ki Barfi","Bhaag Milkha Bhaag",
+  "Bhool Bhulaiyaa","Black Friday","Blackmail","Bobby","Chameli","Chhichhore",
+  "Chupke Chupke","D-Day","Dharm","Dil Dhadakne Do","Do Dooni Char","Fanaa",
+  "Fire","Gandhi","Gangaajal","Gangs of Wasseypur","Ghanchakkar","Gulabo Sitabo",
+  "Guide","Ishqiya","Jab We Met","Jaane Bhi Do Yaaro","Jolly LLB","Kai Po Che",
+  "Kahaani","Karthik Calling Karthik","Khosla Ka Ghosla","Lipstick Under My Burkha",
+  "Lootera","Maachis","Madras Cafe","Mardaani","Mom","Mother India","Mughal-E-Azam",
+  "Mukkabaaz","Munna Bhai MBBS","Neerja","Nil Battey Sannata","No One Killed Jessica",
+  "Paan Singh Tomar","Panga","Pyaasa","Raid","Sahib Biwi Aur Gangster","Saand Ki Aankh",
+  "Shor In The City","Shuddh Desi Romance","Simran","Singham","Sonchiriya","Sui Dhaga",
+  "Super 30","Talvar","The Dirty Picture","The Sky Is Pink","Tiger Zinda Hai","Tumbaad",
+  "Vicky Donor","Wazir","Abhimaan","Aandhi","Anand","Ankhon Dekhi","Antardwand",
+  "Ardh Satya","Barsaat Ki Raat","Bombay","Chameli Ki Shaadi","Chashme Buddoor","Daman",
+  "Dev D","Dhoom","Disco Dancer","Ek Main Aur Ekk Tu","Gaja Gamini","Golmaal","Hero",
+  "Hum Dil De Chuke Sanam","Hum Tum","Jazbaa","Jodhaa Akbar","Josh","Kabhi Alvida Naa Kehna",
+  "Kaho Naa Pyaar Hai","Khalnayak","Khiladi","Kranti","Lakshya","Laila Majnu","Luck By Chance",
+  "Manikarnika","Mr India","Nautanki Saala","Paheli","Parinda","Prem Ratan Dhan Payo",
+  "Raajneeti","Race","Refugee","Rowdy Rathore","Sarkar Raj","Shootout at Lokhandwala",
+  "Student of the Year","Talaash","Tere Naam","Tezaab","Thugs of Hindostan","Waqt","Zid",
+  "Brahmastra","Chhava","Animal","Sam Bahadur","Dunki","Fighter","Stree 2",
+  "Bhool Bhulaiyaa 2","Singham Returns","Bawaal","Rocky Aur Rani Kii Prem Kahaani",
+  "Dream Girl 2","Gadar 2","OMG 2","Mission Raniganj","Article 370","Maidaan","Shaitaan",
+  "Chandu Champion","Bhagam Bhag","Dhamaal","Double Dhamaal","Golmaal Returns","Bol Bachchan",
+  "Housefull","Haseena Parkar","Mardaani 2","Mohenjo Daro","Te3n","Tashan","Raat Akeli Hai",
+  "Omerta","Parched","Bulbbul","Gehraiyaan","Sardar Udham","Bell Bottom","Runway 34","Liger",
+  "Thank God","Ram Setu","Phone Bhoot","Freddy","An Action Hero","Bhediya","Vikram Vedha",
+  "Ek Villain Returns","Hit The First Case","Raksha Bandhan","Laal Singh Chaddha",
+  "Samrat Prithviraj","Radhe Shyam","The Kashmir Files","Gangubai Kathiawadi","Badhaai Do",
+  "Looop Lapeta","Jhund","Anek","Batla House","Kabir Singh","Good Newwz","Total Dhamaal",
+  "Kalank","De De Pyaar De","Bharat","Student Of The Year 2","Ek Ladki Ko Dekha Toh Aisa Laga",
+  "Thackeray","Simmba","India's Most Wanted","Section 375","Luv Shuv Tey Chicken Khurana",
+  "Do Lafzon Ki Kahani","Mirzya","Sarabjit","Ki & Ka","Running Shaadi","Kahaani 2",
+  "Raaz Reboot","Mubarakan","Akira","Freaky Ali","A Gentleman","Sanam Re","Fitoor",
+  "Chalk N Duster","Saala Khadoos","Sanam Teri Kasam","Nayak","Haseena","Mast","Dasvi",
+  "Bhoot Police","Yodha","Dobaaraa","Judgemental Hai Kya","Mirzapur",
+  
+  // --- Recent Popular Hindi Movies (2023-2025) ---
+  "Saiyaara","Chhaava","Kantara","Coolie","Dragon","Sitaare Zameen Par",
+  "Deva","Raid 2","Mahavatar Narsimha","Lokah Chapter 1 Chandra",
 
-  // ----------- NEPALI -----------
-  "Kusume Rumal","Darpan Chhaya","Prem Pinda","Numafung",
-  "Kagbeni","Loot","Talakjung vs Tulke",
-  "Kabaddi","Jatra","Chhakka Panja",
-  "Hostel","Pashupati Prasad","Love Love Love",
-  "Dreams","A Mero Hajur","Chapali Height",
-  "Bir Bikram","Shatru Gate","Gopi","Nai Nabhannu La",
-  "Resham Filili","Selfie King","Prasad",
-  "Mero Euta Saathi Chha","Saayad","Soongava","Uma",
-  "Sanguro","The Black Hen","Seto Surya",
-  "Highway","Kalo Pothi","Sano Sansar",
-  "November Rain","Classic","Jerry","Kri",
-  "Captain","Password","Intu Mintu Londonma",
-  "Romeo & Muna","Muna Madan","Basanti",
-  "Jaya Shiva Shankar","Dui Rupaiyan","How Funny",
-  "Timi Sanga","Lily Bily","Gangster Blues",
-  "Mr. Jholay","Aama","Bulbul","Dhanapati",
-  "Mahapurush","Fulbari","Samjhana Birsana",
-  "Manjari","Ghar","Pardeshi","Prem Geet"
+  // ========== NEPALI (25%) ==========
+  // --- Classics & Blockbusters ---
+  "Kusume Rumal","Darpan Chhaya","Prem Pinda","Numafung","Kagbeni","Loot",
+  "Talakjung vs Tulke","Kabaddi","Jatra","Chhakka Panja","Hostel","Pashupati Prasad",
+  "Love Love Love","Dreams","A Mero Hajur","Chapali Height","Bir Bikram","Shatru Gate",
+  "Gopi","Nai Nabhannu La","Resham Filili","Selfie King","Prasad","Mero Euta Saathi Chha",
+  "Saayad","Soongava","Uma","Sanguro","The Black Hen","Seto Surya","Highway","Kalo Pothi",
+  "Sano Sansar","November Rain","Classic","Jerry","Kri","Captain","Password",
+  "Intu Mintu Londonma","Romeo & Muna","Muna Madan","Basanti","Jaya Shiva Shankar",
+  "Dui Rupaiyan","How Funny","Timi Sanga","Lily Bily","Gangster Blues","Mr Jholay","Aama",
+  "Bulbul","Dhanapati","Mahapurush","Fulbari","Samjhana Birsana","Manjari","Ghar","Pardeshi",
+  "Prem Geet","Kohinoor","Basudev","Lahure","Balidaan","Purano Dunga","Woda Number Six",
+  "Mahajatra","Purna Bahadur Ko Sarangi","12 Gaun","Jaari","Guras","Mann Ko Bandh",
+  "Paral Ko Aago","Kumari","Maitighar","Hawaldar Suntali","Kaji","Badhshala","Dashdhunga",
+  "Paran","Jerry on Top","Paradeshi","Pheri Bhetaula","Chhadke","Jhola","Saili","Chairman",
+  "Bhairav","Hura Hura","Timi Bhane Pachi","Sarkaar","Bhakundo","Saathi","Jatrai Jatra",
+  "Pratiksha","Jeevan Dashain","Dhuku","Luka Chhupa","Krishnaparasad","Mask","Badri","Sani Maiya",
+  "Hamro Choro","Son-in-Law","Phulai Phul","Bindaas","Pratigya","Santaan","Tito Satya","Gajalu",
+  "Deurali","Delirious","Jeevan Sangram","Pahilo Paila","Saino","Kaanchi","Bandre","Aankhon Mein",
+  "Fitoor",
+  
+  // --- Additional Popular Nepali Movies ---
+  "Ghampani","Ghamad Shere","Jhola","Tandro","Maitighar","Chino","Mukautti",
+  "Bato Muniko Phool","Lappan Chhappan","Saayad","Rato Tika Nidharma","Karma"
 ];
